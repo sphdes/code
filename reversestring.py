@@ -1,5 +1,12 @@
-inputfield = """
-four score and seven years ago
+#reverse string
+
+inputdata = """
+supper bulb pick coal stay moon yield emperor
 """
 
-for letter in inputfield
+inputlist = list(inputdata)
+inputlist.reverse()
+outputlist = ''.join(inputlist)
+
+
+print outputlist
