@@ -1,27 +1,23 @@
 #bubblesort
 
 inputdata = """
-8
-3 1 4 1 5 9 2 6
+23
+9 2 12 16 22 19 18 7 6 8 20 4 5 1 10 17 13 14 15 21 3 11 23
 """
 
 inlist = [int(x) for x in inputdata.split()]
 arraylen = inlist.pop(0)
 swapnum = 0
 passnum = 0
-swapcheck = 0
-swapj = 1
-
-while swapj != 0:
+swapped = True
+while swapped:
+    swapped = False
     for x in range(arraylen - 1):
-        if inlist[x] <= inlist[x + 1] not True:
-            p = inlist[x]
-            inlist[x] = inlist[x + 1]
-            inlist[x + 1] = p
+        if inlist[x] > inlist[x + 1]:
+            inlist[x], inlist[x + 1] = inlist[x + 1], inlist[x]
             swapnum += 1
-
+            swapped = True
     passnum += 1
-    swapj = swapcheck - swapnum
-    swapcheck = swapnum
 
-print "%d %d" % (swapnum, passnum)
+print inlist
+print "%d %d" % (passnum, swapnum)
